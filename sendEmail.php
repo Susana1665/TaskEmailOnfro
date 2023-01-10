@@ -89,7 +89,7 @@ function view_all_carrier($idViaje){
     $query = "select t2.email from role_users as t1
     inner join users as t2
     on t1.user_id = t2.id
-    where t1.rol_id='3' and t2.deleted_at is null and t2.email='susana.mendez@hifos.com.mx'";
+    where t1.rol_id='3' and t2.deleted_at is null";
     $part = pg_query($dbconn, $query);
     while ($row = pg_fetch_array($part)) {
     send($row["email"],$idViaje);
