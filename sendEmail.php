@@ -44,7 +44,7 @@ function view_travel(){
     }catch(Exception $e){
     echo 'Mensaje'.$e;
     }
-    pg_close($dbconn);
+    //pg_close($dbconn);
     if($idViaje != 0){
         view_all_carrier( $idViaje);
         echo 'Ya fue enviada su cotización'."\n";
