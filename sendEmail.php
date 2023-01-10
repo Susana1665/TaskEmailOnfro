@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-$conn_string = "host=127.0.0.1 port=5432 dbname=transtenv2 user=postgres password=123 options='--client_encoding=UTF8'";
+$conn_string = "host=127.0.0.1 port=5432 dbname=onfro_dev2 user=onfro_v2_u password=MSKAPVNGYG options='--client_encoding=UTF8'";
 $smtp =  "smtp.gmail.com";
 $email = "ventasTransten@gmail.com";
 $password = "gvvagdsiswdbtrys";
@@ -89,7 +89,7 @@ function view_all_carrier($idViaje){
     $query = "select t2.email from role_users as t1
     inner join users as t2
     on t1.user_id = t2.id
-    where t1.rol_id='3' and t2.deleted_at is null";
+    where t1.rol_id='3' and t2.deleted_at is null and t2.email='susana.mendez@hifos.com.mx'";
     $part = pg_query($dbconn, $query);
     while ($row = pg_fetch_array($part)) {
     send($row["email"],$idViaje);
